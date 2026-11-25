@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simplified Systems: nosotros nos ocupamos de la informática, usted de su empresa</title>
+<meta name="description" content="Soluciones completas para los problemas técnicos que frenan a las empresas: accesibilidad web, seguridad del correo electrónico, licitaciones públicas, y datos y automatización. Precios fijos, iguales para todos.">
+<style>
+  :root { --text:#1b1b1b; --muted:#4a4a4a; --bg:#ffffff; --panel:#f3f5f8; --accent:#1a4f9c; --line:#c9ced6; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--text); background:var(--bg); line-height:1.6; }
+  main, header, footer { max-width: 62rem; margin: 0 auto; padding: 0 1rem; }
+  header { padding-top: 2.5rem; }
+  main p, header p { max-width: 44rem; }
+  .hero { display: grid; gap: 1.5rem 2.5rem; align-items: center; }
+  @media (min-width: 56rem) { .hero { grid-template-columns: 1.15fr 1fr; } }
+  .hero-art svg { width: 100%; height: auto; display: block; border-radius: .9rem; box-shadow: 0 2px 4px rgba(70,50,25,.10), 0 18px 40px rgba(70,50,25,.16); }
+  h1 { font-size: clamp(2rem, 4.6vw, 2.85rem); line-height: 1.15; margin: 0 0 .9rem; }
+  h2 { font-size: 1.35rem; margin: 2.25rem 0 .5rem; }
+  h3 { font-size: 1.1rem; margin: 0 0 .35rem; }
+  p.lead { font-size: 1.15rem; color: var(--muted); }
+  a { color: var(--accent); }
+  .cta { display: inline-block; background: var(--accent); color: #fff; padding: .7rem 1.1rem; border-radius: .4rem; text-decoration: none; font-weight: 600; }
+  .cta:focus, a:focus { outline: 3px solid #f2b705; outline-offset: 2px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 1rem; margin: 1rem 0; }
+  .card { background: var(--panel); border-top: 4px solid var(--accent); padding: 1rem; border-radius: .3rem; }
+  .card p { margin: 0; }
+  footer { color: var(--muted); font-size: .9rem; padding-bottom: 2.5rem; margin-top: 2.5rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+
+  .topbar { max-width: 46rem; margin: 0 auto; padding: 1.1rem 1rem 0; display: flex; flex-wrap: wrap; gap: .3rem 1.25rem; align-items: baseline; justify-content: space-between; }
+  .brand { font-weight: 700; font-size: 1.2rem; color: #1b1b1b; text-decoration: none; letter-spacing: .01em; }
+  .brand span { color: #1a4f9c; }
+  .topbar .links { display: flex; flex-wrap: wrap; gap: .3rem 1rem; }
+  .legal { font-size: .85rem; color: #4a4a4a; }
+  .topbar .links { align-items: center; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .lang { position: relative; }
+  .lang summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .45rem; padding: .25rem .55rem; border: 1px solid #c9ced6; border-radius: .35rem; color: #1b1b1b; }
+  .lang summary::-webkit-details-marker { display: none; }
+  .lang summary::after { content: "▾"; font-size: .8em; color: #4a4a4a; }
+  .lang summary:focus { outline: 3px solid #f2b705; outline-offset: 2px; }
+  .lang ul { position: absolute; right: 0; z-index: 10; margin: .35rem 0 0; padding: .3rem 0; list-style: none; background: #fff; border: 1px solid #c9ced6; border-radius: .35rem; box-shadow: 0 6px 18px rgba(0,0,0,.14); min-width: 12.5rem; max-height: 70vh; overflow-y: auto; }
+  .lang li a { display: flex; align-items: center; gap: .6rem; padding: .35rem .85rem; text-decoration: none; color: #1b1b1b; }
+  .lang li a:hover, .lang li a:focus { background: #f3f5f8; }
+  .lang li a[aria-current] { font-weight: 700; }
+  .flag { width: 21px; height: 14px; flex: none; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.18); }
+  .note { font-size: .9rem; color: #4a4a4a; background: #f3f5f8; padding: .5rem .75rem; border-radius: .3rem; }
+
+  /* warm, paper-and-daylight theme (25 Nov 2026) */
+  :root { --text:#2a251f; --muted:#5b5247; --bg:#f5efe3; --panel:#fffcf5; --accent:#2e5a4c; --line:#d9cfbd; --warm:#a3521c; }
+  body { background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .27 0 0 0 0 .17 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); color: var(--text); font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; }
+  h1, h2, h3, .brand { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; font-weight: 600; color: #231f1a; }
+  h1 { letter-spacing: -.01em; }
+  a { color: var(--accent); }
+  a:focus, .cta:focus, .lang summary:focus { outline: 3px solid #c98a1b; outline-offset: 2px; }
+  .brand span { color: var(--accent); }
+  .cta { background: var(--accent); color: #fff; border-radius: 2rem; padding: .75rem 1.45rem; box-shadow: 0 2px 8px rgba(46,90,76,.28); }
+  .cta:hover { background: #244a3e; }
+  .card, .panel { background: var(--panel); border-radius: .55rem; box-shadow: 0 1px 2px rgba(70,50,25,.08), 0 10px 26px rgba(70,50,25,.07); }
+  .card { border-top: 4px solid var(--accent); }
+  .panel { border-left: 4px solid var(--accent); }
+  th { background: #efe6d4; }
+  th, td { border-color: var(--line); }
+  table { background: var(--panel); }
+  footer { border-top-color: var(--line); }
+  .lang summary { background: var(--panel); border-color: var(--line); }
+  .lang ul { background: var(--panel); border-color: var(--line); }
+  .lang li a:hover, .lang li a:focus { background: #f1e9d8; }
+  .note { background: #efe6d4; }
+  .topbar { max-width: 62rem; }
+  main { padding-top: 1.5rem; }
+  .charge { padding-left: 1.2rem; max-width: 44rem; }
+  .charge li { margin: .45rem 0; }
+  .charge li::marker { color: var(--warm); }
+  .story-turn { color: var(--text); font-weight: 500; }
+  .hero p.lead { font-size: 1.08rem; }
+  .also { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-size: 1.2rem; line-height: 1.5; border-left: 4px solid var(--warm); padding: .2rem 0 .2rem 1rem; color: #3a3129; }
+</style>
+<link rel="canonical" href="https://simplifiedsystems.no/es.html">
+<link rel="alternate" hreflang="en" href="https://simplifiedsystems.no/">
+<link rel="alternate" hreflang="nb" href="https://simplifiedsystems.no/no.html">
+<link rel="alternate" hreflang="sv" href="https://simplifiedsystems.no/sv.html">
+<link rel="alternate" hreflang="da" href="https://simplifiedsystems.no/da.html">
+<link rel="alternate" hreflang="fi" href="https://simplifiedsystems.no/fi.html">
+<link rel="alternate" hreflang="de" href="https://simplifiedsystems.no/de.html">
+<link rel="alternate" hreflang="fr" href="https://simplifiedsystems.no/fr.html">
+<link rel="alternate" hreflang="es" href="https://simplifiedsystems.no/es.html">
+<link rel="alternate" hreflang="it" href="https://simplifiedsystems.no/it.html">
+<link rel="alternate" hreflang="nl" href="https://simplifiedsystems.no/nl.html">
+<link rel="alternate" hreflang="pt" href="https://simplifiedsystems.no/pt.html">
+<link rel="alternate" hreflang="pl" href="https://simplifiedsystems.no/pl.html">
+<link rel="alternate" hreflang="cs" href="https://simplifiedsystems.no/cs.html">
+<link rel="alternate" hreflang="ro" href="https://simplifiedsystems.no/ro.html">
+<link rel="alternate" hreflang="uk" href="https://simplifiedsystems.no/uk.html">
+<link rel="alternate" hreflang="hi" href="https://simplifiedsystems.no/hi.html">
+<link rel="alternate" hreflang="x-default" href="https://simplifiedsystems.no/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4f9c'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ESS%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="f-gb" viewBox="0 0 60 30"><clipPath id="fgbc"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#fgbc)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></symbol><symbol id="f-no" viewBox="0 0 22 16"><rect width="22" height="16" fill="#BA0C2F"/><path d="M6,0h4v16h-4zM0,6h22v4h-22z" fill="#fff"/><path d="M7,0h2v16h-2zM0,7h22v2h-22z" fill="#00205B"/></symbol><symbol id="f-se" viewBox="0 0 16 10"><rect width="16" height="10" fill="#006AA7"/><path d="M5,0h2v10h-2zM0,4h16v2h-16z" fill="#FECC00"/></symbol><symbol id="f-dk" viewBox="0 0 37 28"><rect width="37" height="28" fill="#C8102E"/><path d="M12,0h4v28h-4zM0,12h37v4h-37z" fill="#fff"/></symbol><symbol id="f-fi" viewBox="0 0 18 11"><rect width="18" height="11" fill="#fff"/><path d="M5,0h3v11h-3zM0,4h18v3h-18z" fill="#002F6C"/></symbol><symbol id="f-de" viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></symbol><symbol id="f-nl" viewBox="0 0 9 6"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468B"/></symbol><symbol id="f-fr" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002654"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE1126"/></symbol><symbol id="f-it" viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></symbol><symbol id="f-es" viewBox="0 0 3 2"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></symbol><symbol id="f-pt" viewBox="0 0 30 20"><rect width="30" height="20" fill="#FF0000"/><rect width="12" height="20" fill="#006600"/><circle cx="12" cy="10" r="4.2" fill="#FFE900"/><circle cx="12" cy="10" r="2.6" fill="#FF0000"/><rect x="10.9" y="8.6" width="2.2" height="2.9" rx=".5" fill="#fff"/></symbol><symbol id="f-pl" viewBox="0 0 8 5"><rect width="8" height="5" fill="#DC143C"/><rect width="8" height="2.5" fill="#fff"/></symbol><symbol id="f-cz" viewBox="0 0 6 4"><rect width="6" height="4" fill="#D7141A"/><rect width="6" height="2" fill="#fff"/><path d="M0,0L3,2L0,4z" fill="#11457E"/></symbol><symbol id="f-ro" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002B7F"/><rect x="1" width="1" height="2" fill="#FCD116"/><rect x="2" width="1" height="2" fill="#CE1126"/></symbol><symbol id="f-ua" viewBox="0 0 3 2"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></symbol><symbol id="f-in" viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><rect width="30" height="6.67" fill="#FF9933"/><rect y="13.33" width="30" height="6.67" fill="#138808"/><circle cx="15" cy="10" r="2.6" fill="none" stroke="#000080" stroke-width=".7"/><circle cx="15" cy="10" r=".6" fill="#000080"/></symbol></svg>
+<nav class="topbar" aria-label="Menu"><a class="brand" href="es.html">Simplified <span>Systems</span></a><div class="links"><a href="accessibility.html" hreflang="en">Accesibilidad</a><a href="prices.html" hreflang="en">Precios</a><details class="lang"><summary><span class="vh">Idioma: </span><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-es"/></svg><span lang="es">Español</span></summary><ul><li><a href="/" hreflang="en" lang="en" data-lang="en"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-gb"/></svg>English</a></li><li><a href="no.html" hreflang="nb" lang="nb" data-lang="nb"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-no"/></svg>Norsk</a></li><li><a href="sv.html" hreflang="sv" lang="sv" data-lang="sv"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-se"/></svg>Svenska</a></li><li><a href="da.html" hreflang="da" lang="da" data-lang="da"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-dk"/></svg>Dansk</a></li><li><a href="fi.html" hreflang="fi" lang="fi" data-lang="fi"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-fi"/></svg>Suomi</a></li><li><a href="de.html" hreflang="de" lang="de" data-lang="de"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-de"/></svg>Deutsch</a></li><li><a href="fr.html" hreflang="fr" lang="fr" data-lang="fr"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-fr"/></svg>Français</a></li><li><a href="es.html" hreflang="es" lang="es" data-lang="es" aria-current="true"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-es"/></svg>Español</a></li><li><a href="it.html" hreflang="it" lang="it" data-lang="it"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-it"/></svg>Italiano</a></li><li><a href="nl.html" hreflang="nl" lang="nl" data-lang="nl"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-nl"/></svg>Nederlands</a></li><li><a href="pt.html" hreflang="pt" lang="pt" data-lang="pt"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pt"/></svg>Português</a></li><li><a href="pl.html" hreflang="pl" lang="pl" data-lang="pl"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pl"/></svg>Polski</a></li><li><a href="cs.html" hreflang="cs" lang="cs" data-lang="cs"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-cz"/></svg>Čeština</a></li><li><a href="ro.html" hreflang="ro" lang="ro" data-lang="ro"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-ro"/></svg>Română</a></li><li><a href="uk.html" hreflang="uk" lang="uk" data-lang="uk"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-ua"/></svg>Українська</a></li><li><a href="hi.html" hreflang="hi" lang="hi" data-lang="hi"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-in"/></svg>हिन्दी</a></li></ul></details></div></nav>
+<header class="hero">
+  <div>
+    <h1>Montó su empresa para hacer lo que le gusta. No para pelearse con la informática.</h1>
+    <p class="lead">Por fin lo hizo. Montó su empresa y sabe que le va a ir bien. Entonces llega la letra pequeña. La web tiene que cumplir las normas de accesibilidad. Sus correos acaban en spam, y cualquiera podría enviar facturas falsas en su nombre. Las licitaciones que podría ganar están enterradas en portales que nadie tiene tiempo de leer. Y cada semana se copian cifras a mano de un sitio a otro.</p>
+    <p class="lead">Nada de eso es el motivo por el que empezó. Cada problema le roba una tarde, luego otra, y el trabajo que hace bien tiene que esperar.</p>
+    <p class="lead story-turn">Ahí entramos nosotros. Cuéntenos qué le estorba, entréguenoslo una vez y Simplified Systems resuelve muchos de estos problemas de una sola vez, para que vuelva a sus clientes, a su oficio y a las personas que le rodean.</p>
+    <p><a class="cta" href="mailto:post@simplifiedsystems.no">Escríbanos</a></p>
+  </div>
+  <div class="hero-art"><svg viewBox="0 0 420 330" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcd8e2"/><stop offset=".65" stop-color="#f3e3c3"/><stop offset="1" stop-color="#f8dcb0"/></linearGradient>
+  <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e8d4"/><stop offset="1" stop-color="#e4d4b8"/></linearGradient>
+  <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b88a5c"/><stop offset="1" stop-color="#8e6340"/></linearGradient>
+  <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1cf" stop-opacity=".75"/><stop offset="1" stop-color="#fff1cf" stop-opacity="0"/></linearGradient>
+  <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9bdc2"/><stop offset="1" stop-color="#8f9398"/></linearGradient>
+  <linearGradient id="mug" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c46a33"/><stop offset=".55" stop-color="#d9844b"/><stop offset="1" stop-color="#a9532a"/></linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".2" r=".7"><stop offset="0" stop-color="#fff4d8" stop-opacity=".9"/><stop offset="1" stop-color="#fff4d8" stop-opacity="0"/></radialGradient>
+  <clipPath id="win"><rect x="150" y="22" width="236" height="150" rx="4"/></clipPath>
+</defs>
+<rect width="420" height="330" fill="url(#wall)"/>
+<rect width="420" height="330" fill="url(#glow)"/>
+<g clip-path="url(#win)">
+  <rect x="150" y="22" width="236" height="150" fill="url(#sky)"/>
+  <circle cx="330" cy="62" r="20" fill="#ffe7b0"/>
+  <path d="M150 140 C200 112 236 120 270 132 C300 142 330 118 386 126 L386 172 L150 172 Z" fill="#9db995"/>
+  <path d="M150 156 C190 142 230 150 262 158 C300 166 340 148 386 152 L386 172 L150 172 Z" fill="#7f9f7b"/>
+  <path d="M175 72 q8 -6 16 0 q8 -6 16 0" fill="none" stroke="#7b8f99" stroke-width="2" stroke-linecap="round"/>
+</g>
+<rect x="150" y="22" width="236" height="150" rx="4" fill="none" stroke="#8b6c4c" stroke-width="7"/>
+<path d="M268 22 V172 M150 97 H386" stroke="#8b6c4c" stroke-width="5"/>
+<rect x="140" y="170" width="256" height="9" rx="2" fill="#9c7550"/>
+<polygon points="190,179 380,179 420,250 150,250" fill="url(#beam)"/>
+<rect x="0" y="246" width="420" height="84" fill="url(#wood)"/>
+<rect x="0" y="246" width="420" height="5" fill="#c89c6e"/>
+<path d="M0 282 H420 M0 306 H420" stroke="#83593a" stroke-width="1" opacity=".35"/>
+<ellipse cx="72" cy="250" rx="34" ry="5" fill="#5e4129" opacity=".25"/>
+<path d="M50 206 h44 l-6 42 h-32 z" fill="#b4673f"/>
+<rect x="46" y="200" width="52" height="9" rx="3" fill="#c97a4f"/>
+<g fill="#4f7d5c">
+  <ellipse cx="60" cy="176" rx="9" ry="26" transform="rotate(-24 60 176)"/>
+  <ellipse cx="86" cy="172" rx="9" ry="27" transform="rotate(22 86 172)"/>
+</g>
+<g fill="#6a9a6c">
+  <ellipse cx="72" cy="160" rx="9" ry="31"/>
+  <ellipse cx="48" cy="190" rx="7" ry="18" transform="rotate(-55 48 190)"/>
+  <ellipse cx="97" cy="190" rx="7" ry="18" transform="rotate(55 97 190)"/>
+</g>
+<path d="M72 196 V140 M62 190 L52 170 M82 190 L92 168" stroke="#3e6b4c" stroke-width="2" fill="none"/>
+<ellipse cx="200" cy="252" rx="80" ry="6" fill="#5e4129" opacity=".25"/>
+<rect x="124" y="234" width="152" height="15" rx="4" fill="url(#lid)"/>
+<rect x="124" y="234" width="152" height="4" rx="2" fill="#d3d6da"/>
+<circle cx="200" cy="241" r="3" fill="#a1a5aa"/>
+<g transform="rotate(-6 190 224)">
+  <rect x="140" y="218" width="98" height="16" rx="2" fill="#2f5d50"/>
+  <rect x="140" y="218" width="98" height="4" rx="1" fill="#3d7363"/>
+  <rect x="230" y="218" width="5" height="16" fill="#e0b24f"/>
+</g>
+<ellipse cx="336" cy="252" rx="30" ry="5" fill="#5e4129" opacity=".28"/>
+<path d="M352 214 c18 0 18 24 0 24" fill="none" stroke="#b25e30" stroke-width="6"/>
+<rect x="312" y="204" width="44" height="46" rx="7" fill="url(#mug)"/>
+<ellipse cx="334" cy="205" rx="22" ry="5" fill="#5a3721"/>
+<g fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".75">
+  <path d="M326 196 c-6 -8 6 -12 0 -20 c-6 -8 6 -12 0 -20"/>
+  <path d="M341 194 c-6 -8 6 -12 0 -20"/>
+</g>
+<g transform="rotate(4 380 262)">
+  <rect x="362" y="256" width="44" height="30" rx="2" fill="#fbf7ee"/>
+  <path d="M368 264 h32 M368 270 h32 M368 276 h22" stroke="#c9bda6" stroke-width="1.5"/>
+</g>
+</svg></div>
+</header>
+<main>
+  <p class="also">Como resolvemos los problemas por completo, también buscamos los problemas relacionados que aún no ha mencionado, pero que es importante solucionar. Se los contamos a tiempo y, si quiere, también los solucionamos.</p>
+  <p>La mayoría de los trabajos se hacen en una sola vuelta. Cuando la seguridad exige etapas, como en la seguridad del correo, lo terminamos paso a paso sin quitarle más tiempo. Precios fijos, iguales para todos.</p>
+  <p class="note">Esta página se ha traducido con IA. Los precios, las condiciones y la política de privacidad están en inglés: <a href="prices.html" hreflang="en">Precios</a> · <a href="privacy.html" hreflang="en">Privacidad</a></p>
+  <h2>Lo que le quitamos de encima</h2>
+  <div class="cards">
+    <section class="card">
+      <h3><a href="accessibility.html" hreflang="en">Accesibilidad web</a></h3>
+      <p>Menos visitantes que se quedan fuera y menos preocupaciones por las normas de accesibilidad. Corregimos los seis tipos de error que suman el 96 % de los errores que encuentran las comprobaciones automáticas, con informes de antes y después. Revisión gratuita de hasta cinco páginas.</p>
+    </section>
+    <section class="card">
+      <h3>Seguridad del correo electrónico</h3>
+      <p>Más de sus correos llegan a la bandeja de entrada y a los estafadores les resulta mucho más difícil enviar correos falsos en su nombre. Configuramos SPF, DKIM y DMARC y los reforzamos en etapas seguras.</p>
+    </section>
+    <section class="card">
+      <h3>Selección de licitaciones públicas</h3>
+      <p>Mucho menos tiempo buscando en portales de licitaciones. Cada semana recibe las licitaciones abiertas que encajan con su empresa, con el plazo, por qué encaja cada una y qué exige el anuncio.</p>
+    </section>
+    <section class="card">
+      <h3>Datos y automatización</h3>
+      <p>Mucho menos tiempo copiando cifras a mano. Convertimos datos públicos en Excel, CSV o JSON, ordenamos datos desordenados y automatizamos tareas repetitivas. Probado, con una guía breve.</p>
+    </section>
+    <section class="card">
+      <h3>Revisiones periódicas</h3>
+      <p>Los problemas no deben volver a colarse. Cada mes podemos revisar la accesibilidad de su web y leer los informes de seguridad de su correo, y avisarle con palabras sencillas si algo requiere atención.</p>
+    </section>
+    <section class="card">
+      <h3>Su propia herramienta de datos</h3>
+      <p>¿Necesita la misma información de la web una y otra vez? Creamos una herramienta que la obtiene por usted cuando quiera, entregada en una hoja de cálculo.</p>
+    </section>
+  </div>
+  <p>¿Algo técnico que no está en la lista? Pregúntenos y le diremos si nos encargamos de ello. <a href="prices.html" hreflang="en">Ver todos los precios</a></p>
+
+  <h2>Usted tiene el control</h2>
+  <ul class="charge">
+    <li>Usted decide qué se hace y ve el precio fijo antes de que empecemos.</li>
+    <li>Todo lo que configuramos es suyo: cuentas, claves, código y datos. Sin ataduras.</li>
+    <li>Recibe una guía breve y clara, para saber siempre lo que tiene.</li>
+  </ul>
+
+  <h2>Cómo trabajamos</h2>
+  <p>Combinamos Claude, el modelo de IA avanzado de Anthropic, con motores de prueba automatizados, fuentes de datos oficiales y herramientas propias. Cada resultado se prueba y una persona lo revisa antes de entregárselo. Así resolvemos con rapidez problemas técnicos tanto amplios como muy específicos, y respondemos del resultado: si no entregamos lo acordado, lo corregimos gratis o le devolvemos el dinero.</p>
+  <p>Un servicio gratuito por empresa: la revisión de accesibilidad o la primera selección de licitaciones. Estas ofertas son solo para empresas.</p>
+
+  <h2>Contacto</h2>
+  <p>Correo electrónico: <a href="mailto:post@simplifiedsystems.no">post@simplifiedsystems.no</a></p>
+</main>
+<footer>
+  <p><a href="privacy.html" hreflang="en">Privacidad</a> · <a href="prices.html" hreflang="en">Precios</a></p>
+  <p class="legal" lang="en">Simplified Systems is run by KORBI-LIND VENTURES (sole proprietorship), org. no. 938 901 643, registered in Enhetsregisteret, Klæbuveien 52, 7030 Trondheim, Norway. E-mail: <a href="mailto:post@simplifiedsystems.no">post@simplifiedsystems.no</a></p>
+</footer>
+<script>
+(function () {
+  var links = document.querySelectorAll('.lang a[data-lang]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function () {
+      try { localStorage.setItem('ss_lang', this.getAttribute('data-lang')); } catch (e) {}
+    });
+  }
+  var d = document.querySelector('.lang');
+  if (!d) return;
+  document.addEventListener('click', function (e) { if (d.open && !d.contains(e.target)) d.open = false; });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); }
+  });
+})();
+</script>
+</body>
+</html>
