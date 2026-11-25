@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Průběžná kontrola · Simplified Systems</title>
+<meta name="description" content="Problémy se nesmí potichu vracet. Každý měsíc můžeme zkontrolovat přístupnost vašeho webu a přečíst zprávy o zabezpečení vašeho e-mailu a jednoduše vám říct, jestli něco potřebuje pozornost.">
+<style>
+  :root { --text:#1b1b1b; --muted:#4a4a4a; --bg:#ffffff; --panel:#f3f5f8; --accent:#1a4f9c; --line:#c9ced6; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--text); background:var(--bg); line-height:1.6; }
+  main, header, footer { max-width: 62rem; margin: 0 auto; padding: 0 1rem; }
+  header { padding-top: 2.5rem; }
+  main p, header p { max-width: 44rem; }
+  .hero { display: grid; gap: 1.5rem 2.5rem; align-items: center; }
+  @media (min-width: 56rem) { .hero { grid-template-columns: 1.15fr 1fr; } }
+  .hero-art svg { width: 100%; height: auto; display: block; border-radius: .9rem; box-shadow: 0 2px 4px rgba(70,50,25,.10), 0 18px 40px rgba(70,50,25,.16); }
+  h1 { font-size: clamp(2rem, 4.6vw, 2.85rem); line-height: 1.15; margin: 0 0 .9rem; }
+  h2 { font-size: 1.35rem; margin: 2.25rem 0 .5rem; }
+  h3 { font-size: 1.1rem; margin: 0 0 .35rem; }
+  p.lead { font-size: 1.15rem; color: var(--muted); }
+  a { color: var(--accent); }
+  .cta { display: inline-block; background: var(--accent); color: #fff; padding: .7rem 1.1rem; border-radius: .4rem; text-decoration: none; font-weight: 600; }
+  .cta:focus, a:focus { outline: 3px solid #f2b705; outline-offset: 2px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 1rem; margin: 1rem 0; }
+  .card { background: var(--panel); border-top: 4px solid var(--accent); padding: 1rem; border-radius: .3rem; }
+  .card p { margin: 0; }
+  footer { color: var(--muted); font-size: .9rem; padding-bottom: 2.5rem; margin-top: 2.5rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+
+  .topbar { max-width: 46rem; margin: 0 auto; padding: 1.1rem 1rem 0; display: flex; flex-wrap: wrap; gap: .3rem 1.25rem; align-items: baseline; justify-content: space-between; }
+  .brand { font-weight: 700; font-size: 1.2rem; color: #1b1b1b; text-decoration: none; letter-spacing: .01em; }
+  .brand span { color: #1a4f9c; }
+  .topbar .links { display: flex; flex-wrap: wrap; gap: .3rem 1rem; }
+  .legal { font-size: .85rem; color: #4a4a4a; }
+  .topbar .links { align-items: center; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .lang { position: relative; }
+  .lang summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .45rem; padding: .25rem .55rem; border: 1px solid #c9ced6; border-radius: .35rem; color: #1b1b1b; }
+  .lang summary::-webkit-details-marker { display: none; }
+  .lang summary::after { content: "▾"; font-size: .8em; color: #4a4a4a; }
+  .lang summary:focus { outline: 3px solid #f2b705; outline-offset: 2px; }
+  .lang ul { position: absolute; right: 0; z-index: 10; margin: .35rem 0 0; padding: .3rem 0; list-style: none; background: #fff; border: 1px solid #c9ced6; border-radius: .35rem; box-shadow: 0 6px 18px rgba(0,0,0,.14); min-width: 12.5rem; max-height: 70vh; overflow-y: auto; }
+  .lang li a { display: flex; align-items: center; gap: .6rem; padding: .35rem .85rem; text-decoration: none; color: #1b1b1b; }
+  .lang li a:hover, .lang li a:focus { background: #f3f5f8; }
+  .lang li a[aria-current] { font-weight: 700; }
+  .flag { width: 21px; height: 14px; flex: none; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.18); }
+  .note { font-size: .9rem; color: #4a4a4a; background: #f3f5f8; padding: .5rem .75rem; border-radius: .3rem; }
+  .skip { position: absolute; left: -9999px; top: .5rem; z-index: 20; background: #fff; padding: .5rem .8rem; border-radius: .3rem; }
+  .skip:focus { left: .5rem; }
+  .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+  /* warm, paper-and-daylight theme (25 Nov 2026) */
+  :root { --text:#2a251f; --muted:#5b5247; --bg:#f5efe3; --panel:#fffcf5; --accent:#2e5a4c; --line:#d9cfbd; --warm:#a3521c; }
+  body { background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .27 0 0 0 0 .17 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); color: var(--text); font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; }
+  h1, h2, h3, .brand { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; font-weight: 600; color: #231f1a; }
+  h1 { letter-spacing: -.01em; }
+  a { color: var(--accent); }
+  a:focus, .cta:focus, .lang summary:focus { outline: 3px solid #c98a1b; outline-offset: 2px; }
+  .brand span { color: var(--accent); }
+  .cta { background: var(--accent); color: #fff; border-radius: 2rem; padding: .75rem 1.45rem; box-shadow: 0 2px 8px rgba(46,90,76,.28); }
+  .cta:hover { background: #244a3e; }
+  .card, .panel { background: var(--panel); border-radius: .55rem; box-shadow: 0 1px 2px rgba(70,50,25,.08), 0 10px 26px rgba(70,50,25,.07); }
+  .card { border-top: 4px solid var(--accent); }
+  .panel { border-left: 4px solid var(--accent); }
+  th { background: #efe6d4; }
+  th, td { border-color: var(--line); }
+  table { background: var(--panel); }
+  footer { border-top-color: var(--line); }
+  .lang summary { background: var(--panel); border-color: var(--line); }
+  .lang ul { background: var(--panel); border-color: var(--line); }
+  .lang li a:hover, .lang li a:focus { background: #f1e9d8; }
+  .note { background: #efe6d4; }
+  main, header, footer { max-width: 46rem; }
+  .topbar { max-width: 46rem; }
+  header { padding-top: 2rem; }
+  .crumb { margin: 0 0 1rem; font-size: .95rem; }
+  .charge { padding-left: 1.2rem; }
+  .charge li, .steps li { margin: .45rem 0; }
+  .charge li::marker, .steps li::marker { color: var(--warm); font-weight: 700; }
+  .price { background: var(--panel); border-left: 4px solid var(--accent); padding: .75rem 1rem; border-radius: .4rem; }
+</style>
+<link rel="canonical" href="https://simplifiedsystems.no/monthly-checks-cs.html">
+<link rel="alternate" hreflang="en" href="https://simplifiedsystems.no/monthly-checks.html">
+<link rel="alternate" hreflang="nb" href="https://simplifiedsystems.no/lopende-kontroll.html">
+<link rel="alternate" hreflang="sv" href="https://simplifiedsystems.no/monthly-checks-sv.html">
+<link rel="alternate" hreflang="da" href="https://simplifiedsystems.no/monthly-checks-da.html">
+<link rel="alternate" hreflang="fi" href="https://simplifiedsystems.no/monthly-checks-fi.html">
+<link rel="alternate" hreflang="de" href="https://simplifiedsystems.no/monthly-checks-de.html">
+<link rel="alternate" hreflang="fr" href="https://simplifiedsystems.no/monthly-checks-fr.html">
+<link rel="alternate" hreflang="es" href="https://simplifiedsystems.no/monthly-checks-es.html">
+<link rel="alternate" hreflang="it" href="https://simplifiedsystems.no/monthly-checks-it.html">
+<link rel="alternate" hreflang="nl" href="https://simplifiedsystems.no/monthly-checks-nl.html">
+<link rel="alternate" hreflang="pt" href="https://simplifiedsystems.no/monthly-checks-pt.html">
+<link rel="alternate" hreflang="pl" href="https://simplifiedsystems.no/monthly-checks-pl.html">
+<link rel="alternate" hreflang="cs" href="https://simplifiedsystems.no/monthly-checks-cs.html">
+<link rel="alternate" hreflang="ro" href="https://simplifiedsystems.no/monthly-checks-ro.html">
+<link rel="alternate" hreflang="uk" href="https://simplifiedsystems.no/monthly-checks-uk.html">
+<link rel="alternate" hreflang="hi" href="https://simplifiedsystems.no/monthly-checks-hi.html">
+<link rel="alternate" hreflang="x-default" href="https://simplifiedsystems.no/monthly-checks.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4f9c'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ESS%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#2e5a4c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Simplified Systems">
+<meta property="og:url" content="https://simplifiedsystems.no/monthly-checks-cs.html">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:locale:alternate" content="sv_SE">
+<meta property="og:locale:alternate" content="da_DK">
+<meta property="og:locale:alternate" content="fi_FI">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pt_PT">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="ro_RO">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:title" content="Průběžná kontrola · Simplified Systems">
+<meta property="og:description" content="Problémy se nesmí potichu vracet. Každý měsíc můžeme zkontrolovat přístupnost vašeho webu a přečíst zprávy o zabezpečení vašeho e-mailu a jednoduše vám říct, jestli něco potřebuje pozornost.">
+</head>
+<body>
+<a class="skip" href="#content">Přejít na obsah</a>
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="f-gb" viewBox="0 0 60 30"><clipPath id="fgbc"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#fgbc)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></symbol><symbol id="f-no" viewBox="0 0 22 16"><rect width="22" height="16" fill="#BA0C2F"/><path d="M6,0h4v16h-4zM0,6h22v4h-22z" fill="#fff"/><path d="M7,0h2v16h-2zM0,7h22v2h-22z" fill="#00205B"/></symbol><symbol id="f-se" viewBox="0 0 16 10"><rect width="16" height="10" fill="#006AA7"/><path d="M5,0h2v10h-2zM0,4h16v2h-16z" fill="#FECC00"/></symbol><symbol id="f-dk" viewBox="0 0 37 28"><rect width="37" height="28" fill="#C8102E"/><path d="M12,0h4v28h-4zM0,12h37v4h-37z" fill="#fff"/></symbol><symbol id="f-fi" viewBox="0 0 18 11"><rect width="18" height="11" fill="#fff"/><path d="M5,0h3v11h-3zM0,4h18v3h-18z" fill="#002F6C"/></symbol><symbol id="f-de" viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></symbol><symbol id="f-nl" viewBox="0 0 9 6"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468B"/></symbol><symbol id="f-fr" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002654"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE1126"/></symbol><symbol id="f-it" viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></symbol><symbol id="f-es" viewBox="0 0 3 2"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></symbol><symbol id="f-pt" viewBox="0 0 30 20"><rect width="30" height="20" fill="#FF0000"/><rect width="12" height="20" fill="#006600"/><circle cx="12" cy="10" r="4.2" fill="#FFE900"/><circle cx="12" cy="10" r="2.6" fill="#FF0000"/><rect x="10.9" y="8.6" width="2.2" height="2.9" rx=".5" fill="#fff"/></symbol><symbol id="f-pl" viewBox="0 0 8 5"><rect width="8" height="5" fill="#DC143C"/><rect width="8" height="2.5" fill="#fff"/></symbol><symbol id="f-cz" viewBox="0 0 6 4"><rect width="6" height="4" fill="#D7141A"/><rect width="6" height="2" fill="#fff"/><path d="M0,0L3,2L0,4z" fill="#11457E"/></symbol><symbol id="f-ro" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002B7F"/><rect x="1" width="1" height="2" fill="#FCD116"/><rect x="2" width="1" height="2" fill="#CE1126"/></symbol><symbol id="f-ua" viewBox="0 0 3 2"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></symbol><symbol id="f-in" viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><rect width="30" height="6.67" fill="#FF9933"/><rect y="13.33" width="30" height="6.67" fill="#138808"/><circle cx="15" cy="10" r="2.6" fill="none" stroke="#000080" stroke-width=".7"/><circle cx="15" cy="10" r=".6" fill="#000080"/></symbol></svg>
+<nav class="topbar" aria-label="Menu"><a class="brand" href="cs.html">Simplified <span>Systems</span></a><div class="links"><a href="accessibility.html?lang=cs" hreflang="en">Přístupnost</a><a href="prices.html?lang=cs" hreflang="en">Ceny</a><details class="lang"><summary><span class="vh">Jazyk: </span><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-cz"/></svg><span lang="cs">Čeština</span></summary><ul><li><a href="monthly-checks.html" hreflang="en" lang="en" data-lang="en"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-gb"/></svg>English</a></li><li><a href="lopende-kontroll.html" hreflang="nb" lang="nb" data-lang="nb"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-no"/></svg>Norsk</a></li><li><a href="monthly-checks-sv.html" hreflang="sv" lang="sv" data-lang="sv"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-se"/></svg>Svenska</a></li><li><a href="monthly-checks-da.html" hreflang="da" lang="da" data-lang="da"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-dk"/></svg>Dansk</a></li><li><a href="monthly-checks-fi.html" hreflang="fi" lang="fi" data-lang="fi"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-fi"/></svg>Suomi</a></li><li><a href="monthly-checks-de.html" hreflang="de" lang="de" data-lang="de"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-de"/></svg>Deutsch</a></li><li><a href="monthly-checks-fr.html" hreflang="fr" lang="fr" data-lang="fr"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-fr"/></svg>Français</a></li><li><a href="monthly-checks-es.html" hreflang="es" lang="es" data-lang="es"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-es"/></svg>Español</a></li><li><a href="monthly-checks-it.html" hreflang="it" lang="it" data-lang="it"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-it"/></svg>Italiano</a></li><li><a href="monthly-checks-nl.html" hreflang="nl" lang="nl" data-lang="nl"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-nl"/></svg>Nederlands</a></li><li><a href="monthly-checks-pt.html" hreflang="pt" lang="pt" data-lang="pt"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pt"/></svg>Português</a></li><li><a href="monthly-checks-pl.html" hreflang="pl" lang="pl" data-lang="pl"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pl"/></svg>Polski</a></li><li><a href="monthly-checks-cs.html" hreflang="cs" lang="cs" data-lang="cs" aria-current="true"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-cz"/></svg>Čeština</a></li><li><a href="monthly-checks-ro.html" hreflang="ro" lang="ro" data-lang="ro"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-ro"/></svg>Română</a></li><li><a href="monthly-checks-uk.html" hreflang="uk" lang="uk" data-lang="uk"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-ua"/></svg>Українська</a></li><li><a href="monthly-checks-hi.html" hreflang="hi" lang="hi" data-lang="hi"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-in"/></svg>हिन्दी</a></li></ul></details></div></nav>
+<header id="content">
+  <p class="crumb"><a href="cs.html#services">← Všechny služby</a></p>
+  <h1>Průběžná kontrola</h1>
+  <p class="lead">Problémy se nesmí potichu vracet. Každý měsíc můžeme zkontrolovat přístupnost vašeho webu a přečíst zprávy o zabezpečení vašeho e-mailu a jednoduše vám říct, jestli něco potřebuje pozornost.</p>
+  <p><a class="cta" href="mailto:post@simplifiedsystems.no?subject=Pr%C5%AFb%C4%9B%C5%BEn%C3%A1%20kontrola">Napište nám o tom</a></p>
+</header>
+<main>
+  <p class="note">Tato stránka byla přeložena pomocí AI. Ceny, podmínky a informace o ochraně soukromí jsou v angličtině: <a href="prices.html?lang=cs" hreflang="en">Ceny</a> · <a href="privacy.html?lang=cs" hreflang="en">Soukromí</a></p>
+  <h2>Co dostanete</h2>
+  <ul class="charge">
+    <li>Každý měsíc automatická kontrola přístupnosti až 25 stránek vašeho webu s krátkou zprávou.</li>
+    <li>Vaše zprávy DMARC každý měsíc přečtené a shrnuté, abyste viděli, kdo posílá e-maily vaším jménem.</li>
+    <li>Jednoduché upozornění, když něco potřebuje pozornost, a co s tím dělat.</li>
+  </ul>
+
+  <h2>Jak to probíhá</h2>
+  <ol class="steps">
+    <li>Napište nám e-mailem, co potřebujete. Odpovíme s rozsahem a pevnou cenou.</li>
+    <li>Pokud je potřeba přístup, udělíte ho jednou.</li>
+    <li>Vše nastavíme, otestujeme a pošleme vám krátký návod.</li>
+  </ol>
+
+  <h2>Dobré vědět</h2>
+  <p>Měsíc po měsíci bez minimální doby. Zrušení e-mailem kdykoli.</p>
+
+  <h2>Cena</h2>
+  <p class="price">Kontrola přístupnosti 89 EUR měsíčně (990 NOK). Sledování e-mailu 69 USD měsíčně za doménu. Ceny jsou bez DPH. <a href="prices.html?lang=cs" hreflang="en">Všechny ceny a podmínky</a></p>
+</main>
+<footer>
+  <p><a href="privacy.html?lang=cs" hreflang="en">Soukromí</a> · <a href="prices.html?lang=cs" hreflang="en">Ceny</a></p>
+  <p class="legal" lang="en">Simplified Systems is run by KORBI-LIND VENTURES (sole proprietorship), org. no. 938 901 643, registered in Enhetsregisteret, Klæbuveien 52, 7030 Trondheim, Norway. E-mail: <a href="mailto:post@simplifiedsystems.no">post@simplifiedsystems.no</a></p>
+</footer>
+<script>
+(function () {
+  var links = document.querySelectorAll('.lang a[data-lang]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function () {
+      try { localStorage.setItem('ss_lang', this.getAttribute('data-lang')); } catch (e) {}
+    });
+  }
+  var d = document.querySelector('.lang');
+  if (!d) return;
+  document.addEventListener('click', function (e) { if (d.open && !d.contains(e.target)) d.open = false; });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); }
+  });
+})();
+</script>
+</body>
+</html>

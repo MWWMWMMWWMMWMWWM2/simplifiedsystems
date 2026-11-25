@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simplified Systems: nós tratamos da informática, você gere a sua empresa</title>
+<title>Simplified Systems: nós tratamos da sua informática</title>
 <meta name="description" content="Soluções completas para os problemas técnicos que travam as empresas: acessibilidade de sites, segurança do e-mail, concursos públicos, e dados e automação. Preços fixos, iguais para todos.">
 <style>
   :root { --text:#1b1b1b; --muted:#4a4a4a; --bg:#ffffff; --panel:#f3f5f8; --accent:#1a4f9c; --line:#c9ced6; }
@@ -45,6 +45,9 @@
   .lang li a[aria-current] { font-weight: 700; }
   .flag { width: 21px; height: 14px; flex: none; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.18); }
   .note { font-size: .9rem; color: #4a4a4a; background: #f3f5f8; padding: .5rem .75rem; border-radius: .3rem; }
+  .skip { position: absolute; left: -9999px; top: .5rem; z-index: 20; background: #fff; padding: .5rem .8rem; border-radius: .3rem; }
+  .skip:focus { left: .5rem; }
+  .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 
   /* warm, paper-and-daylight theme (25 Nov 2026) */
   :root { --text:#2a251f; --muted:#5b5247; --bg:#f5efe3; --panel:#fffcf5; --accent:#2e5a4c; --line:#d9cfbd; --warm:#a3521c; }
@@ -95,11 +98,35 @@
 <link rel="alternate" hreflang="hi" href="https://simplifiedsystems.no/hi.html">
 <link rel="alternate" hreflang="x-default" href="https://simplifiedsystems.no/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a4f9c'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ESS%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#2e5a4c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Simplified Systems">
+<meta property="og:url" content="https://simplifiedsystems.no/pt.html">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:locale:alternate" content="sv_SE">
+<meta property="og:locale:alternate" content="da_DK">
+<meta property="og:locale:alternate" content="fi_FI">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="cs_CZ">
+<meta property="og:locale:alternate" content="ro_RO">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:title" content="Simplified Systems: nós tratamos da sua informática">
+<meta property="og:description" content="Soluções completas para os problemas técnicos que travam as empresas: acessibilidade de sites, segurança do e-mail, concursos públicos, e dados e automação. Preços fixos, iguais para todos.">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="f-gb" viewBox="0 0 60 30"><clipPath id="fgbc"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#fgbc)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></symbol><symbol id="f-no" viewBox="0 0 22 16"><rect width="22" height="16" fill="#BA0C2F"/><path d="M6,0h4v16h-4zM0,6h22v4h-22z" fill="#fff"/><path d="M7,0h2v16h-2zM0,7h22v2h-22z" fill="#00205B"/></symbol><symbol id="f-se" viewBox="0 0 16 10"><rect width="16" height="10" fill="#006AA7"/><path d="M5,0h2v10h-2zM0,4h16v2h-16z" fill="#FECC00"/></symbol><symbol id="f-dk" viewBox="0 0 37 28"><rect width="37" height="28" fill="#C8102E"/><path d="M12,0h4v28h-4zM0,12h37v4h-37z" fill="#fff"/></symbol><symbol id="f-fi" viewBox="0 0 18 11"><rect width="18" height="11" fill="#fff"/><path d="M5,0h3v11h-3zM0,4h18v3h-18z" fill="#002F6C"/></symbol><symbol id="f-de" viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></symbol><symbol id="f-nl" viewBox="0 0 9 6"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468B"/></symbol><symbol id="f-fr" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002654"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE1126"/></symbol><symbol id="f-it" viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></symbol><symbol id="f-es" viewBox="0 0 3 2"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></symbol><symbol id="f-pt" viewBox="0 0 30 20"><rect width="30" height="20" fill="#FF0000"/><rect width="12" height="20" fill="#006600"/><circle cx="12" cy="10" r="4.2" fill="#FFE900"/><circle cx="12" cy="10" r="2.6" fill="#FF0000"/><rect x="10.9" y="8.6" width="2.2" height="2.9" rx=".5" fill="#fff"/></symbol><symbol id="f-pl" viewBox="0 0 8 5"><rect width="8" height="5" fill="#DC143C"/><rect width="8" height="2.5" fill="#fff"/></symbol><symbol id="f-cz" viewBox="0 0 6 4"><rect width="6" height="4" fill="#D7141A"/><rect width="6" height="2" fill="#fff"/><path d="M0,0L3,2L0,4z" fill="#11457E"/></symbol><symbol id="f-ro" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002B7F"/><rect x="1" width="1" height="2" fill="#FCD116"/><rect x="2" width="1" height="2" fill="#CE1126"/></symbol><symbol id="f-ua" viewBox="0 0 3 2"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></symbol><symbol id="f-in" viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><rect width="30" height="6.67" fill="#FF9933"/><rect y="13.33" width="30" height="6.67" fill="#138808"/><circle cx="15" cy="10" r="2.6" fill="none" stroke="#000080" stroke-width=".7"/><circle cx="15" cy="10" r=".6" fill="#000080"/></symbol></svg>
-<nav class="topbar" aria-label="Menu"><a class="brand" href="pt.html">Simplified <span>Systems</span></a><div class="links"><a href="accessibility.html" hreflang="en">Acessibilidade</a><a href="prices.html" hreflang="en">Preços</a><details class="lang"><summary><span class="vh">Idioma: </span><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pt"/></svg><span lang="pt">Português</span></summary><ul><li><a href="/" hreflang="en" lang="en" data-lang="en"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-gb"/></svg>English</a></li><li><a href="no.html" hreflang="nb" lang="nb" data-lang="nb"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-no"/></svg>Norsk</a></li><li><a href="sv.html" hreflang="sv" lang="sv" data-lang="sv"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-se"/></svg>Svenska</a></li><li><a href="da.html" hreflang="da" lang="da" data-lang="da"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-dk"/></svg>Dansk</a></li><li><a href="fi.html" hreflang="fi" lang="fi" data-lang="fi"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-fi"/></svg>Suomi</a></li><li><a href="de.html" hreflang="de" lang="de" data-lang="de"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-de"/></svg>Deutsch</a></li><li><a href="fr.html" hreflang="fr" lang="fr" data-lang="fr"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-fr"/></svg>Français</a></li><li><a href="es.html" hreflang="es" lang="es" data-lang="es"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-es"/></svg>Español</a></li><li><a href="it.html" hreflang="it" lang="it" data-lang="it"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-it"/></svg>Italiano</a></li><li><a href="nl.html" hreflang="nl" lang="nl" data-lang="nl"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-nl"/></svg>Nederlands</a></li><li><a href="pt.html" hreflang="pt" lang="pt" data-lang="pt" aria-current="true"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pt"/></svg>Português</a></li><li><a href="pl.html" hreflang="pl" lang="pl" data-lang="pl"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pl"/></svg>Polski</a></li><li><a href="cs.html" hreflang="cs" lang="cs" data-lang="cs"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-cz"/></svg>Čeština</a></li><li><a href="ro.html" hreflang="ro" lang="ro" data-lang="ro"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-ro"/></svg>Română</a></li><li><a href="uk.html" hreflang="uk" lang="uk" data-lang="uk"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-ua"/></svg>Українська</a></li><li><a href="hi.html" hreflang="hi" lang="hi" data-lang="hi"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-in"/></svg>हिन्दी</a></li></ul></details></div></nav>
-<header class="hero">
+<a class="skip" href="#content">Saltar para o conteúdo</a>
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="f-gb" viewBox="0 0 60 30"><clipPath id="fgbc"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#fgbc)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></symbol><symbol id="f-no" viewBox="0 0 22 16"><rect width="22" height="16" fill="#BA0C2F"/><path d="M6,0h4v16h-4zM0,6h22v4h-22z" fill="#fff"/><path d="M7,0h2v16h-2zM0,7h22v2h-22z" fill="#00205B"/></symbol><symbol id="f-se" viewBox="0 0 16 10"><rect width="16" height="10" fill="#006AA7"/><path d="M5,0h2v10h-2zM0,4h16v2h-16z" fill="#FECC00"/></symbol><symbol id="f-dk" viewBox="0 0 37 28"><rect width="37" height="28" fill="#C8102E"/><path d="M12,0h4v28h-4zM0,12h37v4h-37z" fill="#fff"/></symbol><symbol id="f-fi" viewBox="0 0 18 11"><rect width="18" height="11" fill="#fff"/><path d="M5,0h3v11h-3zM0,4h18v3h-18z" fill="#002F6C"/></symbol><symbol id="f-de" viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></symbol><symbol id="f-nl" viewBox="0 0 9 6"><rect width="9" height="2" fill="#AE1C28"/><rect y="2" width="9" height="2" fill="#fff"/><rect y="4" width="9" height="2" fill="#21468B"/></symbol><symbol id="f-fr" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002654"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE1126"/></symbol><symbol id="f-it" viewBox="0 0 3 2"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></symbol><symbol id="f-es" viewBox="0 0 3 2"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></symbol><symbol id="f-pt" viewBox="0 0 30 20"><rect width="30" height="20" fill="#FF0000"/><rect width="12" height="20" fill="#006600"/><circle cx="12" cy="10" r="4.2" fill="#FFE900"/><circle cx="12" cy="10" r="2.6" fill="#FF0000"/><rect x="10.9" y="8.6" width="2.2" height="2.9" rx=".5" fill="#fff"/></symbol><symbol id="f-pl" viewBox="0 0 8 5"><rect width="8" height="5" fill="#DC143C"/><rect width="8" height="2.5" fill="#fff"/></symbol><symbol id="f-cz" viewBox="0 0 6 4"><rect width="6" height="4" fill="#D7141A"/><rect width="6" height="2" fill="#fff"/><path d="M0,0L3,2L0,4z" fill="#11457E"/></symbol><symbol id="f-ro" viewBox="0 0 3 2"><rect width="1" height="2" fill="#002B7F"/><rect x="1" width="1" height="2" fill="#FCD116"/><rect x="2" width="1" height="2" fill="#CE1126"/></symbol><symbol id="f-ua" viewBox="0 0 3 2"><rect width="3" height="1" fill="#0057B7"/><rect y="1" width="3" height="1" fill="#FFD700"/></symbol><symbol id="f-in" viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><rect width="30" height="6.67" fill="#FF9933"/><rect y="13.33" width="30" height="6.67" fill="#138808"/><circle cx="15" cy="10" r="2.6" fill="none" stroke="#000080" stroke-width=".7"/><circle cx="15" cy="10" r=".6" fill="#000080"/></symbol></svg>
+<nav class="topbar" aria-label="Menu"><a class="brand" href="pt.html">Simplified <span>Systems</span></a><div class="links"><a href="accessibility.html?lang=pt" hreflang="en">Acessibilidade</a><a href="prices.html?lang=pt" hreflang="en">Preços</a><details class="lang"><summary><span class="vh">Idioma: </span><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pt"/></svg><span lang="pt">Português</span></summary><ul><li><a href="/" hreflang="en" lang="en" data-lang="en"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-gb"/></svg>English</a></li><li><a href="no.html" hreflang="nb" lang="nb" data-lang="nb"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-no"/></svg>Norsk</a></li><li><a href="sv.html" hreflang="sv" lang="sv" data-lang="sv"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-se"/></svg>Svenska</a></li><li><a href="da.html" hreflang="da" lang="da" data-lang="da"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-dk"/></svg>Dansk</a></li><li><a href="fi.html" hreflang="fi" lang="fi" data-lang="fi"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-fi"/></svg>Suomi</a></li><li><a href="de.html" hreflang="de" lang="de" data-lang="de"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-de"/></svg>Deutsch</a></li><li><a href="fr.html" hreflang="fr" lang="fr" data-lang="fr"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-fr"/></svg>Français</a></li><li><a href="es.html" hreflang="es" lang="es" data-lang="es"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-es"/></svg>Español</a></li><li><a href="it.html" hreflang="it" lang="it" data-lang="it"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-it"/></svg>Italiano</a></li><li><a href="nl.html" hreflang="nl" lang="nl" data-lang="nl"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-nl"/></svg>Nederlands</a></li><li><a href="pt.html" hreflang="pt" lang="pt" data-lang="pt" aria-current="true"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pt"/></svg>Português</a></li><li><a href="pl.html" hreflang="pl" lang="pl" data-lang="pl"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-pl"/></svg>Polski</a></li><li><a href="cs.html" hreflang="cs" lang="cs" data-lang="cs"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-cz"/></svg>Čeština</a></li><li><a href="ro.html" hreflang="ro" lang="ro" data-lang="ro"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-ro"/></svg>Română</a></li><li><a href="uk.html" hreflang="uk" lang="uk" data-lang="uk"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-ua"/></svg>Українська</a></li><li><a href="hi.html" hreflang="hi" lang="hi" data-lang="hi"><svg class="flag" aria-hidden="true" focusable="false" preserveAspectRatio="none"><use href="#f-in"/></svg>हिन्दी</a></li></ul></details></div></nav>
+<header class="hero" id="content">
   <div>
     <h1>Criou a sua empresa para fazer aquilo de que gosta. Não para lutar com a informática.</h1>
     <p class="lead">Finalmente conseguiu. Criou a sua empresa e sabe que vai correr bem. Depois chegam as letras pequenas. O site tem de cumprir as regras de acessibilidade. Os seus e-mails vão parar ao spam, e qualquer pessoa poderia enviar faturas falsas em seu nome. Os concursos que poderia ganhar estão enterrados em portais que ninguém tem tempo para ler. E todas as semanas há números copiados à mão de um sítio para outro.</p>
@@ -173,35 +200,35 @@
 <main>
   <p class="also">Como resolvemos os problemas por inteiro, procuramos também os problemas relacionados que ainda não referiu, mas que é importante resolver. Avisamos cedo e, se quiser, resolvemo-los também.</p>
   <p>A maioria dos trabalhos faz-se numa só ronda. Quando a segurança exige etapas, como na segurança do e-mail, concluímos passo a passo sem lhe tirar mais tempo. Preços fixos, iguais para todos.</p>
-  <p class="note">Esta página foi traduzida com IA. Os preços, as condições e a política de privacidade estão em inglês: <a href="prices.html" hreflang="en">Preços</a> · <a href="privacy.html" hreflang="en">Privacidade</a></p>
-  <h2>O que tiramos das suas mãos</h2>
+  <p class="note">Esta página foi traduzida com IA. Os preços, as condições e a política de privacidade estão em inglês: <a href="prices.html?lang=pt" hreflang="en">Preços</a> · <a href="privacy.html?lang=pt" hreflang="en">Privacidade</a></p>
+  <h2 id="services">O que tiramos das suas mãos</h2>
   <div class="cards">
     <section class="card">
-      <h3><a href="accessibility.html" hreflang="en">Acessibilidade de sites</a></h3>
+      <h3><a href="accessibility.html?lang=pt" hreflang="en">Acessibilidade de sites</a></h3>
       <p>Menos visitantes excluídos e menos preocupações com as regras de acessibilidade. Corrigimos os seis tipos de erro responsáveis por 96 % dos erros que as verificações automáticas encontram, com relatórios antes e depois. Verificação gratuita de até cinco páginas.</p>
     </section>
     <section class="card">
-      <h3>Segurança do e-mail</h3>
+      <h3><a href="email-security-pt.html">Segurança do e-mail</a></h3>
       <p>Mais e-mails seus chegam à caixa de entrada e torna-se muito mais difícil para os burlões enviarem e-mails falsos em seu nome. Configuramos SPF, DKIM e DMARC e reforçamo-los em etapas seguras.</p>
     </section>
     <section class="card">
-      <h3>Seleção de concursos públicos</h3>
+      <h3><a href="tender-shortlists-pt.html">Seleção de concursos públicos</a></h3>
       <p>Muito menos procura em portais de concursos. Todas as semanas recebe os concursos abertos que se adequam à sua empresa, com o prazo, a razão pela qual cada um se adequa e o que o anúncio exige.</p>
     </section>
     <section class="card">
-      <h3>Dados e automação</h3>
+      <h3><a href="data-automation-pt.html">Dados e automação</a></h3>
       <p>Muito menos números copiados à mão. Transformamos dados públicos em Excel, CSV ou JSON, arrumamos dados desorganizados e automatizamos tarefas repetitivas. Testado, com um guia curto.</p>
     </section>
     <section class="card">
-      <h3>Verificações regulares</h3>
+      <h3><a href="monthly-checks-pt.html">Verificações regulares</a></h3>
       <p>Os problemas não devem voltar às escondidas. Todos os meses podemos verificar a acessibilidade do seu site e ler os relatórios de segurança do seu e-mail, e dizer-lhe em palavras simples se algo precisa de atenção.</p>
     </section>
     <section class="card">
-      <h3>A sua própria ferramenta de dados</h3>
+      <h3><a href="data-tool-pt.html">A sua própria ferramenta de dados</a></h3>
       <p>Precisa das mesmas informações da web vezes sem conta? Criamos uma ferramenta que as obtém por si quando quiser, entregues numa folha de cálculo.</p>
     </section>
   </div>
-  <p>Algo técnico que não está na lista? Pergunte-nos e dizemos-lhe se tratamos disso. <a href="prices.html" hreflang="en">Ver todos os preços</a></p>
+  <p>Algo técnico que não está na lista? Pergunte-nos e dizemos-lhe se tratamos disso. <a href="prices.html?lang=pt" hreflang="en">Ver todos os preços</a></p>
 
   <h2>O controlo é seu</h2>
   <ul class="charge">
@@ -218,7 +245,7 @@
   <p>E-mail: <a href="mailto:post@simplifiedsystems.no">post@simplifiedsystems.no</a></p>
 </main>
 <footer>
-  <p><a href="privacy.html" hreflang="en">Privacidade</a> · <a href="prices.html" hreflang="en">Preços</a></p>
+  <p><a href="privacy.html?lang=pt" hreflang="en">Privacidade</a> · <a href="prices.html?lang=pt" hreflang="en">Preços</a></p>
   <p class="legal" lang="en">Simplified Systems is run by KORBI-LIND VENTURES (sole proprietorship), org. no. 938 901 643, registered in Enhetsregisteret, Klæbuveien 52, 7030 Trondheim, Norway. E-mail: <a href="mailto:post@simplifiedsystems.no">post@simplifiedsystems.no</a></p>
 </footer>
 <script>
