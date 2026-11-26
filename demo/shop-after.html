@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Demo shop, after the fixes (invented page)</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; color: #2a251f; background: #fffdf8; line-height: 1.5; }
+  .demo-note { padding: .45rem 1rem; background: #2e5a4c; color: #fff; font-size: .9rem; }
+  .demo-note p { margin: 0; }
+  .demo-note a { color: #fff; }
+  header, main, footer { max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+  .bar { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; padding: .9rem 0; }
+  .logo { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; font-weight: 700; margin-right: auto; }
+  .bar form { display: flex; gap: .35rem; }
+  .bar input { width: 9rem; }
+  input, select, button { font: inherit; padding: .45rem .6rem; border: 1px solid #8a7d66; border-radius: .4rem; background: #fff; color: #2a251f; }
+  button { background: #2e5a4c; color: #fff; border-color: #2e5a4c; cursor: pointer; display: inline-flex; align-items: center; gap: .4rem; }
+  a:focus, button:focus, input:focus, select:focus { outline: 3px solid #c98a1b; outline-offset: 2px; }
+  .icon { width: 1.15rem; height: 1.15rem; flex: none; }
+  .iconlink { display: inline-flex; align-items: center; gap: .35rem; color: #2e5a4c; padding: .35rem; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 1.7rem; line-height: 1.2; margin: 1rem 0 .3rem; }
+  h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem; margin: 1.6rem 0 .5rem; }
+  h3 { font-size: 1rem; margin: .5rem 0 .1rem; }
+  .tagline { color: #5b5247; margin: 0 0 1rem; }
+  .sale { background: #8a4f0a; color: #ffffff; padding: .6rem .9rem; border-radius: .5rem; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1rem; padding: 0; margin: 0; list-style: none; }
+  .grid li { background: #fff; border: 1px solid #e3d9c6; border-radius: .7rem; padding: .7rem; }
+  .grid img { width: 100%; height: auto; display: block; border-radius: .45rem; background: #f3ecdd; }
+  .price { color: #6b4a1b; margin: 0 0 .5rem; }
+  .news { display: flex; flex-wrap: wrap; gap: .5rem; align-items: end; }
+  .news div { display: flex; flex-direction: column; gap: .2rem; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  footer { margin-top: 2rem; padding-top: .8rem; padding-bottom: 1.5rem; border-top: 1px solid #e3d9c6; display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; font-size: .92rem; }
+  footer p { margin: 0 auto 0 0; }
+</style>
+</head>
+<body>
+<aside class="demo-note" aria-label="About this demo page"><p>Demo page. This shop is invented and nothing is for sale. This is the version after the fixes. Simplified Systems made it for its accessibility sample. Nothing you type here is sent anywhere. <a href="../sample-accessibility-fix.html" target="_top">Back to the sample</a></p></aside>
+<header>
+  <div class="bar">
+    <span class="logo">The Demo Pottery</span>
+    <form action="#" role="search">
+      <label class="vh" for="q">Search the shop</label>
+      <input id="q" type="search">
+      <button type="submit"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Search</button>
+    </form>
+    <a class="iconlink" href="#basket"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 7h14l-1.5 9h-11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 7a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>Basket</a>
+  </div>
+</header>
+<main>
+  <h1>Cups and bowls made by hand</h1>
+  <p class="tagline">Free delivery in Norway on orders over 500 kr.</p>
+  <p class="sale">Autumn sale: 20% off all bowls this week</p>
+
+  <h2>New this month</h2>
+  <ul class="grid">
+    <li>
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Crect width='200' height='140' fill='%23f3ecdd'/%3E%3Cellipse cx='100' cy='118' rx='52' ry='7' fill='%23d9cdb6'/%3E%3Cpath d='M62 44h70v52a22 22 0 0 1-22 22H84a22 22 0 0 1-22-22z' fill='%233f6f8a'/%3E%3Cpath d='M132 58c22 0 22 34 0 34' fill='none' stroke='%233f6f8a' stroke-width='9'/%3E%3Cellipse cx='97' cy='44' rx='35' ry='6' fill='%232c5269'/%3E%3C/svg%3E" width="200" height="140" alt="A blue glazed mug with a round handle">
+      <h3>Blue mug</h3>
+      <p class="price">249 kr</p>
+      <button type="button"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Add<span class="vh"> the blue mug to the basket</span></button>
+    </li>
+    <li>
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Crect width='200' height='140' fill='%23f3ecdd'/%3E%3Cellipse cx='100' cy='116' rx='60' ry='7' fill='%23d9cdb6'/%3E%3Cpath d='M38 62h124c0 34-26 54-62 54S38 96 38 62z' fill='%234f7d5c'/%3E%3Cellipse cx='100' cy='62' rx='62' ry='9' fill='%233a6046'/%3E%3C/svg%3E" width="200" height="140" alt="A wide green bowl">
+      <h3>Green bowl</h3>
+      <p class="price">319 kr</p>
+      <button type="button"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Add<span class="vh"> the green bowl to the basket</span></button>
+    </li>
+    <li>
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 140'%3E%3Crect width='200' height='140' fill='%23f3ecdd'/%3E%3Cellipse cx='100' cy='122' rx='40' ry='6' fill='%23d9cdb6'/%3E%3Cpath d='M86 30h28v18c22 10 30 30 24 50-4 14-14 22-38 22s-34-8-38-22c-6-20 2-40 24-50z' fill='%23b4673f'/%3E%3Cellipse cx='100' cy='30' rx='14' ry='4' fill='%238a4a2b'/%3E%3C/svg%3E" width="200" height="140" alt="A round vase in unglazed red clay">
+      <h3>Clay vase</h3>
+      <p class="price">429 kr</p>
+      <button type="button"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Add<span class="vh"> the clay vase to the basket</span></button>
+    </li>
+  </ul>
+
+  <h2>News from the workshop</h2>
+  <form class="news" action="#">
+    <div><label for="email">Your e-mail</label><input id="email" type="email" autocomplete="email"></div>
+    <div><label for="country">Country</label><select id="country"><option>Norway</option><option>Sweden</option><option>Denmark</option></select></div>
+    <button type="submit">Sign up</button>
+  </form>
+</main>
+<footer>
+  <p>The Demo Pottery, an invented shop.</p>
+  <a class="iconlink" href="#photos"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect x="3" y="5" width="14" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10.5" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>Photos from the workshop</a>
+</footer>
+</body>
+</html>

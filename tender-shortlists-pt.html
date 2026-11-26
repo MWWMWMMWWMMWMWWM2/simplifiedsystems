@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Seleção de concursos públicos · Simplified Systems</title>
-<meta name="description" content="Deixe de vasculhar portais de concursos. Todas as semanas recebe os concursos abertos que se adequam à sua empresa, com o prazo, porque se adequa cada um e o que exige.">
+<meta name="description" content="Todas as semanas recebe os concursos abertos que se adequam à sua empresa, com o prazo, porque se adequa cada um e o que exige.">
 <style>
   :root { --text:#1b1b1b; --muted:#4a4a4a; --bg:#ffffff; --panel:#f3f5f8; --accent:#1a4f9c; --line:#c9ced6; }
   * { box-sizing: border-box; }
@@ -70,6 +70,53 @@
   .lang ul { background: var(--panel); border-color: var(--line); }
   .lang li a:hover, .lang li a:focus { background: #f1e9d8; }
   .note { background: #efe6d4; }
+
+  /* nature, people and softer shapes (26 Nov 2026) */
+  :root { --sk1:#a9cfe0; --sk2:#d6e6dd; --sk3:#f6e6c4; --wa1:#8ab5c6; --wa2:#5f8fa6; --hill1:#a9c2b4; --hill2:#7fa08a; --spruce:#5f8570;
+          --sun:#fff0b8; --sun-y:0px; --cloud:.85; --pane:#f6efdc; --veil:#1b2a4a; --veil-o:0; --lights:0; --night:0; }
+  :root[data-light="dawn"]  { --sk1:#9db6d6; --sk2:#f0c9bb; --sk3:#fbe2b4; --wa1:#b9b3c4; --wa2:#7d8fad; --hill1:#b3b2c0; --hill2:#8795a0; --spruce:#667d82;
+          --sun:#ffd28a; --sun-y:62px; --cloud:.7; --veil:#5b4c86; --veil-o:.2; --lights:.5; }
+  :root[data-light="dusk"]  { --sk1:#57689a; --sk2:#e2957a; --sk3:#f8c688; --wa1:#b5848a; --wa2:#5d5f8c; --hill1:#8e7f9c; --hill2:#5f6384; --spruce:#4a5068;
+          --sun:#ffab63; --sun-y:68px; --cloud:.45; --pane:#ffd98a; --veil:#4a3266; --veil-o:.36; --lights:.9; }
+  :root[data-light="night"] { --sk1:#0d1830; --sk2:#18294a; --sk3:#2b4566; --wa1:#22395a; --wa2:#14233f; --hill1:#1f3350; --hill2:#172840; --spruce:#101d30;
+          --sun:#0d1830; --sun-y:120px; --cloud:.08; --pane:#ffd98a; --veil:#0e1836; --veil-o:.7; --lights:1; --night:1; }
+  .scene .sk1 { stop-color: var(--sk1); } .scene .sk2 { stop-color: var(--sk2); } .scene .sk3 { stop-color: var(--sk3); }
+  .scene .wa1 { stop-color: var(--wa1); } .scene .wa2 { stop-color: var(--wa2); }
+  .scene .hill1 { fill: var(--hill1); } .scene .hill2 { fill: var(--hill2); } .scene .spruce { fill: var(--spruce); }
+  .scene .sun { fill: var(--sun); transform: translateY(var(--sun-y)); }
+  .scene .cloud { fill: #fff; opacity: var(--cloud); }
+  .scene .pane { fill: var(--pane); stroke: #6b5a45; stroke-width: .6; }
+  .scene .veil { fill: var(--veil); opacity: var(--veil-o); mix-blend-mode: multiply; }
+  .scene .lights { opacity: var(--lights); }
+  .scene .night { opacity: var(--night); }
+  .scene .aurora { filter: blur(5px); }
+  .hero-art svg.scene { width: 100%; height: auto; display: block; border-radius: 2.2rem 3.4rem 2.6rem 3rem / 2.8rem 2.4rem 3.2rem 2.2rem; box-shadow: 0 2px 4px rgba(70,50,25,.10), 0 18px 40px rgba(70,50,25,.16); }
+  @media (prefers-reduced-motion: no-preference) {
+    .scene .sun { animation: ss-rise 1.6s ease-out both; }
+    .scene .lights { animation: ss-glow 1.8s ease-out both; }
+  }
+  @keyframes ss-rise { from { transform: translateY(calc(var(--sun-y) + 16px)); } to { transform: translateY(var(--sun-y)); } }
+  @keyframes ss-glow { from { opacity: 0; } to { opacity: var(--lights); } }
+  .spots { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; margin: 1.6rem 0 1.2rem; max-width: 44rem; }
+  .spots svg { width: 100%; height: auto; display: block; box-shadow: 0 1px 2px rgba(70,50,25,.10), 0 8px 20px rgba(70,50,25,.10); }
+  .spots svg:nth-child(1) { border-radius: 1.6rem 1.1rem 1.4rem 1.2rem / 1.2rem 1.5rem 1.1rem 1.6rem; }
+  .spots svg:nth-child(2) { border-radius: 1.1rem 1.5rem 1.2rem 1.6rem / 1.5rem 1.1rem 1.6rem 1.2rem; }
+  .spots svg:nth-child(3) { border-radius: 1.4rem 1.2rem 1.7rem 1.1rem / 1.1rem 1.6rem 1.2rem 1.5rem; }
+  @media (max-width: 30rem) { .spots { gap: .5rem; } }
+  .card { border-radius: 1.2rem 1.5rem 1.3rem 1.6rem / 1.4rem 1.2rem 1.6rem 1.3rem; padding: 1.1rem 1.15rem 1.2rem; }
+  .panel, .price { border-radius: .9rem 1.3rem 1.1rem 1.4rem / 1.2rem .9rem 1.4rem 1.1rem; }
+  h2 { padding-bottom: .35rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='6' viewBox='0 0 64 6'%3E%3Cpath d='M1 4 q7.75 -5 15.5 0 t15.5 0 t15.5 0 t15.5 0' fill='none' stroke='%23c98a1b' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") left bottom / 64px 6px no-repeat; }
+  .panel h2 { background: none; padding-bottom: 0; }
+  .proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin: 1rem 0; padding: 0; list-style: none; }
+  .proof li { background: var(--panel); border-left: 5px solid var(--warm); border-radius: .5rem 1.4rem 1.2rem .5rem / .5rem 1.2rem 1.5rem .5rem; padding: .9rem 1.1rem 1rem;
+    box-shadow: 0 1px 2px rgba(70,50,25,.08), 0 10px 26px rgba(70,50,25,.07); display: flex; flex-direction: column; gap: .35rem; }
+  .proof h3, .proof p { margin: 0; }
+  .proof .go { margin-top: auto; padding-top: .35rem; font-weight: 600; }
+  .proof time { font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .cmp { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-size: 1.12rem; line-height: 1.5; border-left: 4px solid var(--warm); padding: .2rem 0 .2rem 1rem; color: #3a3129; max-width: 44rem; }
+  .strip-wrap { margin: 2.5rem 0 0; line-height: 0; overflow: hidden; }
+  svg.strip { display: block; width: 100%; height: 84px; }
+  .strip-wrap + footer { margin-top: 0; border-top: 0; padding-top: 1.1rem; }
   main, header, footer { max-width: 46rem; }
   .topbar { max-width: 46rem; }
   header { padding-top: 2rem; }
@@ -120,7 +167,7 @@
 <meta property="og:locale:alternate" content="uk_UA">
 <meta property="og:locale:alternate" content="hi_IN">
 <meta property="og:title" content="Seleção de concursos públicos · Simplified Systems">
-<meta property="og:description" content="Deixe de vasculhar portais de concursos. Todas as semanas recebe os concursos abertos que se adequam à sua empresa, com o prazo, porque se adequa cada um e o que exige.">
+<meta property="og:description" content="Todas as semanas recebe os concursos abertos que se adequam à sua empresa, com o prazo, porque se adequa cada um e o que exige.">
 </head>
 <body>
 <a class="skip" href="#content">Saltar para o conteúdo</a>
@@ -129,17 +176,19 @@
 <header id="content">
   <p class="crumb"><a href="pt.html#services">← Todos os serviços</a></p>
   <h1>Seleção de concursos públicos</h1>
-  <p class="lead">Deixe de vasculhar portais de concursos. Todas as semanas recebe os concursos abertos que se adequam à sua empresa, com o prazo, porque se adequa cada um e o que exige.</p>
+  <p class="lead">Todas as semanas recebe os concursos abertos que se adequam à sua empresa, com o prazo, porque se adequa cada um e o que exige.</p>
   <p><a class="cta" href="mailto:post@simplifiedsystems.no?subject=Sele%C3%A7%C3%A3o%20de%20concursos%20p%C3%BAblicos">Envie-nos um e-mail sobre isto</a></p>
 </header>
 <main>
   <p class="note">Esta página foi traduzida com IA. Os preços, as condições e a política de privacidade estão em inglês: <a href="prices.html?lang=pt" hreflang="en">Preços</a> · <a href="privacy.html?lang=pt" hreflang="en">Privacidade</a></p>
+  <p class="cmp">Um alerta gratuito envia-lhe todos os anúncios que correspondem a uma pesquisa. Nós enviamos-lhe os poucos que se adequam ao que vende, e dizemos porquê.</p>
   <h2>O que recebe</h2>
   <ul class="charge">
     <li>Todas as semanas, novos concursos do TED, a base de dados oficial da UE (acima dos limiares do EEE), ajustados ao seu perfil.</li>
     <li>Para cada um: o prazo, os dias que faltam, porque se adequa e o que o anúncio exige, em inglês ou norueguês.</li>
     <li>Ajuda opcional com propostas: todos os meses comentamos um rascunho de proposta e redigimos as suas perguntas à entidade adjudicante.</li>
   </ul>
+  <p><a href="sample-tender-shortlist.html?lang=pt" hreflang="en">Ver uma seleção real</a></p>
 
   <h2>Como funciona</h2>
   <ol class="steps">
@@ -154,6 +203,7 @@
   <h2>Preço</h2>
   <p class="price">Primeira seleção grátis, depois 2.990 NOK por mês, ou 5.990 NOK por mês com ajuda na proposta. Preços sem IVA. <a href="prices.html?lang=pt" hreflang="en">Todos os preços e condições</a></p>
 </main>
+<div class="strip-wrap"><svg class="strip" viewBox="0 0 960 84" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M0 54 C90 30 170 40 260 48 C360 58 420 22 520 28 C620 34 690 52 780 44 C850 38 910 46 960 40 V84 H0Z" fill="#c5d5c4"/><path d="M0 66 C120 50 220 58 330 62 C440 66 520 46 640 50 C760 54 860 44 960 54 V84 H0Z" fill="#a3bfa6"/><path d="M0 78 C160 66 300 72 470 74 C640 76 800 64 960 70 V84 H0Z" fill="#86a88c"/><path d="M60 40 l7.48 22 h-14.96z" fill="#55806a"/><path d="M78 47 l5.1000000000000005 15 h-10.200000000000001z" fill="#55806a"/><path d="M96 42 l6.460000000000001 19 h-12.920000000000002z" fill="#55806a"/><path d="M330 43 l6.800000000000001 20 h-13.600000000000001z" fill="#55806a"/><path d="M348 50 l4.760000000000001 14 h-9.520000000000001z" fill="#55806a"/><path d="M586 31 l7.140000000000001 21 h-14.280000000000001z" fill="#55806a"/><path d="M604 37 l5.1000000000000005 15 h-10.200000000000001z" fill="#55806a"/><path d="M622 34 l6.12 18 h-12.24z" fill="#55806a"/><path d="M842 30 l6.800000000000001 20 h-13.600000000000001z" fill="#55806a"/><path d="M860 36 l4.760000000000001 14 h-9.520000000000001z" fill="#55806a"/><path d="M902 35 l5.78 17 h-11.56z" fill="#55806a"/><g><rect x="446" y="52" width="34" height="18" fill="#a3432f"/><path d="M442 53 L463 39 L484 53Z" fill="#4d4a48"/><rect x="452" y="57" width="7" height="7" fill="#f5efe3"/><rect x="466" y="57" width="7" height="13" fill="#f5efe3"/><path d="M446 52 V70 M480 52 V70" stroke="#f5efe3" stroke-width="1.6"/><rect x="472" y="38" width="4" height="8" fill="#8c8a84"/><path d="M498 70 V40" stroke="#8c8a84" stroke-width="1.4"/><path d="M498.7 41 l13 2.2 l-13 2.6z" fill="#a3432f"/></g><g transform="translate(214 60) scale(0.34 0.34)"><path d="M-4.5 -44 Q-7 -36 -6 -26" fill="none" stroke="#823626" stroke-width="4.6" stroke-linecap="round"/><circle cx="-6" cy="-26" r="2.3" fill="#e9b995"/><path d="M-3.5 -1.5 L-2.5 -27 M4 -1.5 L2.5 -27" stroke="#3a4750" stroke-width="5.6" stroke-linecap="round"/><path d="M-7 0 h7 M1 0 h8" stroke="#2f2824" stroke-width="3.2" stroke-linecap="round"/><path d="M-7.5 -25 C-8.6 -38 -8 -47 0 -48 C8 -47 8.6 -38 7.5 -25 Z" fill="#a3432f"/><rect x="-1.5" y="-51.7" width="3.6" height="4.6" fill="#cda383"/><circle cx="-0.9" cy="-56.7" r="6.3" fill="#3a2a20"/><circle cx="0.9" cy="-55.5" r="5.3" fill="#e9b995"/><path d="M-6.4 -57.1 a6.6 6.6 0 0 1 13 -.9 z" fill="#f5efe3"/><rect x="-6.8" y="-58.6" width="13.8" height="2.6" rx="1.3" fill="#c9c4ba"/><circle cx="-0.4" cy="-64.1" r="2.1" fill="#f8f5ed"/><path d="M4 -44 Q7 -36 5.5 -26" fill="none" stroke="#823626" stroke-width="4.6" stroke-linecap="round"/><circle cx="5.5" cy="-26" r="2.3" fill="#e9b995"/></g><g transform="translate(226 61) scale(0.34 0.34)"><path d="M-4.5 -44 Q-7 -36 -6 -26" fill="none" stroke="#32596e" stroke-width="4.6" stroke-linecap="round"/><circle cx="-6" cy="-26" r="2.3" fill="#8d5a3c"/><path d="M-3.5 -1.5 L-2.5 -27 M4 -1.5 L2.5 -27" stroke="#4a3a2c" stroke-width="5.6" stroke-linecap="round"/><path d="M-7 0 h7 M1 0 h8" stroke="#2f2824" stroke-width="3.2" stroke-linecap="round"/><path d="M-7.5 -25 C-8.6 -38 -8 -47 0 -48 C8 -47 8.6 -38 7.5 -25 Z" fill="#3f6f8a"/><rect x="-1.5" y="-51.7" width="3.6" height="4.6" fill="#7c4f35"/><circle cx="-0.9" cy="-56.7" r="6.3" fill="#1f1814"/><circle cx="0.9" cy="-55.5" r="5.3" fill="#8d5a3c"/><path d="M4 -44 Q7 -36 5.5 -26" fill="none" stroke="#32596e" stroke-width="4.6" stroke-linecap="round"/><circle cx="5.5" cy="-26" r="2.3" fill="#8d5a3c"/></g></svg></div>
 <footer>
   <p><a href="privacy.html?lang=pt" hreflang="en">Privacidade</a> · <a href="prices.html?lang=pt" hreflang="en">Preços</a></p>
   <p class="legal" lang="en">Simplified Systems is run by KORBI-LIND VENTURES (sole proprietorship), org. no. 938 901 643, registered in Enhetsregisteret, Klæbuveien 52, 7030 Trondheim, Norway. E-mail: <a href="mailto:post@simplifiedsystems.no">post@simplifiedsystems.no</a></p>
