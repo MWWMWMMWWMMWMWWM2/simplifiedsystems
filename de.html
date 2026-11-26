@@ -6,7 +6,7 @@
 <script>
 (function () {
   var m = /[?&]light=(dawn|day|dusk|night)\b/.exec(location.search), h = new Date().getHours();
-  document.documentElement.setAttribute('data-light', m ? m[1] : h < 5 || h >= 22 ? 'night' : h < 9 ? 'dawn' : h < 17 ? 'day' : 'dusk');
+  document.documentElement.setAttribute('data-light', m ? m[1] : 'day');
 })();
 </script>
 <title>Simplified Systems: Wir kümmern uns um die IT, Sie um Ihr Unternehmen</title>
@@ -113,6 +113,10 @@
   .panel, .price { border-radius: .9rem 1.3rem 1.1rem 1.4rem / 1.2rem .9rem 1.4rem 1.1rem; }
   h2 { padding-bottom: .35rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='6' viewBox='0 0 64 6'%3E%3Cpath d='M1 4 q7.75 -5 15.5 0 t15.5 0 t15.5 0 t15.5 0' fill='none' stroke='%23c98a1b' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") left bottom / 64px 6px no-repeat; }
   .panel h2 { background: none; padding-bottom: 0; }
+  .ba { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin: 1.2rem 0 1.4rem; }
+  .ba figure { margin: 0; }
+  .ba img { display: block; width: 100%; height: auto; border-radius: 1rem 1.3rem 1.1rem 1.4rem; border: 1px solid rgba(70,50,25,.18); box-shadow: 0 10px 26px rgba(70,50,25,.09); }
+  .ba figcaption { margin-top: .55rem; font-size: .95rem; }
   .proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin: 1rem 0; padding: 0; list-style: none; }
   .proof li { background: var(--panel); border-left: 5px solid var(--warm); border-radius: .5rem 1.4rem 1.2rem .5rem / .5rem 1.2rem 1.5rem .5rem; padding: .9rem 1.1rem 1rem;
     box-shadow: 0 1px 2px rgba(70,50,25,.08), 0 10px 26px rgba(70,50,25,.07); display: flex; flex-direction: column; gap: .35rem; }
@@ -226,7 +230,17 @@
   <p>Etwas Technisches, das nicht auf der Liste steht? Fragen Sie uns, und wir sagen Ihnen, ob wir es übernehmen. <a href="prices.html?lang=de" hreflang="en">Alle Preise ansehen</a></p>
 
   <h2 id="samples">Sehen Sie sich die Arbeit an, bevor Sie entscheiden</h2>
-  <p>Verlassen Sie sich nicht auf unser Wort. Jedes Beispiel unten ist echte Arbeit, datiert, mit öffentlichen Daten oder auf unseren eigenen Seiten, und Sie können jede Zeile nachprüfen. Wir sind ein neues Unternehmen, deshalb gibt es noch keine Kundenarbeiten zu zeigen. Die Beispiele sind auf Englisch.</p>
+  <p>Verlassen Sie sich nicht auf unser Wort. Jedes Beispiel unten ist echte Arbeit, datiert, mit öffentlichen Daten oder auf unseren eigenen Seiten, und Sie können jede Zeile nachprüfen. Wir haben 2026 angefangen und haben noch keine Kunden, daher sind die Beispiele unsere eigene Arbeit. Die Beispiele sind auf Englisch.</p>
+  <div class="ba">
+    <figure>
+      <img src="img/ba_en_before.webp" width="1140" height="1125" alt="Die Seite des Demo-Shops mit 18 roten Markierungen an den Stellen, die den Test nicht bestehen." loading="lazy" decoding="async">
+      <figcaption><strong>Vorher.</strong> Unsere Demo-Shop-Seite, mit den sechs häufigsten Fehlerarten. Ein automatischer Test findet 18 Fehler, rot markiert.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/ba_en_after.webp" width="1140" height="1125" alt="Dieselbe Demo-Seite nach der Korrektur, ohne Markierungen." loading="lazy" decoding="async">
+      <figcaption><strong>Nachher.</strong> Dieselbe Seite nach unserer Korrektur. Derselbe Test findet keinen Fehler. Ein solcher Test findet nur manche Fehlerarten.</figcaption>
+    </figure>
+  </div>
   <ul class="proof">
     <li>
       <h3>Eine wöchentliche Ausschreibungsauswahl</h3>

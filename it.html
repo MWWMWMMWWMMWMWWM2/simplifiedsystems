@@ -6,7 +6,7 @@
 <script>
 (function () {
   var m = /[?&]light=(dawn|day|dusk|night)\b/.exec(location.search), h = new Date().getHours();
-  document.documentElement.setAttribute('data-light', m ? m[1] : h < 5 || h >= 22 ? 'night' : h < 9 ? 'dawn' : h < 17 ? 'day' : 'dusk');
+  document.documentElement.setAttribute('data-light', m ? m[1] : 'day');
 })();
 </script>
 <title>Simplified Systems: all'informatica pensiamo noi</title>
@@ -113,6 +113,10 @@
   .panel, .price { border-radius: .9rem 1.3rem 1.1rem 1.4rem / 1.2rem .9rem 1.4rem 1.1rem; }
   h2 { padding-bottom: .35rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='6' viewBox='0 0 64 6'%3E%3Cpath d='M1 4 q7.75 -5 15.5 0 t15.5 0 t15.5 0 t15.5 0' fill='none' stroke='%23c98a1b' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") left bottom / 64px 6px no-repeat; }
   .panel h2 { background: none; padding-bottom: 0; }
+  .ba { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin: 1.2rem 0 1.4rem; }
+  .ba figure { margin: 0; }
+  .ba img { display: block; width: 100%; height: auto; border-radius: 1rem 1.3rem 1.1rem 1.4rem; border: 1px solid rgba(70,50,25,.18); box-shadow: 0 10px 26px rgba(70,50,25,.09); }
+  .ba figcaption { margin-top: .55rem; font-size: .95rem; }
   .proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin: 1rem 0; padding: 0; list-style: none; }
   .proof li { background: var(--panel); border-left: 5px solid var(--warm); border-radius: .5rem 1.4rem 1.2rem .5rem / .5rem 1.2rem 1.5rem .5rem; padding: .9rem 1.1rem 1rem;
     box-shadow: 0 1px 2px rgba(70,50,25,.08), 0 10px 26px rgba(70,50,25,.07); display: flex; flex-direction: column; gap: .35rem; }
@@ -226,7 +230,17 @@
   <p>Qualcosa di tecnico che non è nell'elenco? Chiedici e ti diremo se ce ne occupiamo noi. <a href="prices.html?lang=it" hreflang="en">Vedi tutti i prezzi</a></p>
 
   <h2 id="samples">Guarda il lavoro prima di decidere</h2>
-  <p>Non fidarti solo della nostra parola. Ogni esempio qui sotto è lavoro vero, datato, fatto su dati pubblici o sulle nostre pagine, e puoi verificare ogni riga. Siamo un'azienda nuova, quindi non abbiamo ancora lavori per clienti da mostrare. Gli esempi sono in inglese.</p>
+  <p>Non fidarti solo della nostra parola. Ogni esempio qui sotto è lavoro vero, datato, fatto su dati pubblici o sulle nostre pagine, e puoi verificare ogni riga. Abbiamo iniziato nel 2026 e non abbiamo ancora clienti, quindi gli esempi sono lavoro nostro. Gli esempi sono in inglese.</p>
+  <div class="ba">
+    <figure>
+      <img src="img/ba_en_before.webp" width="1140" height="1125" alt="La pagina del negozio dimostrativo con 18 segni rossi sulle parti che non superano il test." loading="lazy" decoding="async">
+      <figcaption><strong>Prima.</strong> La nostra pagina di negozio dimostrativa, con i sei tipi di errore più comuni. Un test automatico trova 18 errori, segnati in rosso.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/ba_en_after.webp" width="1140" height="1125" alt="La stessa pagina dimostrativa dopo la correzione, senza segni." loading="lazy" decoding="async">
+      <figcaption><strong>Dopo.</strong> La stessa pagina dopo la correzione. Lo stesso test non ne trova nessuno. Un test così trova solo alcuni tipi di errore.</figcaption>
+    </figure>
+  </div>
   <ul class="proof">
     <li>
       <h3>Una selezione settimanale di gare</h3>

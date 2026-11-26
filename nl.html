@@ -6,7 +6,7 @@
 <script>
 (function () {
   var m = /[?&]light=(dawn|day|dusk|night)\b/.exec(location.search), h = new Date().getHours();
-  document.documentElement.setAttribute('data-light', m ? m[1] : h < 5 || h >= 22 ? 'night' : h < 9 ? 'dawn' : h < 17 ? 'day' : 'dusk');
+  document.documentElement.setAttribute('data-light', m ? m[1] : 'day');
 })();
 </script>
 <title>Simplified Systems: wij regelen de IT, u runt uw bedrijf</title>
@@ -113,6 +113,10 @@
   .panel, .price { border-radius: .9rem 1.3rem 1.1rem 1.4rem / 1.2rem .9rem 1.4rem 1.1rem; }
   h2 { padding-bottom: .35rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='6' viewBox='0 0 64 6'%3E%3Cpath d='M1 4 q7.75 -5 15.5 0 t15.5 0 t15.5 0 t15.5 0' fill='none' stroke='%23c98a1b' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") left bottom / 64px 6px no-repeat; }
   .panel h2 { background: none; padding-bottom: 0; }
+  .ba { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin: 1.2rem 0 1.4rem; }
+  .ba figure { margin: 0; }
+  .ba img { display: block; width: 100%; height: auto; border-radius: 1rem 1.3rem 1.1rem 1.4rem; border: 1px solid rgba(70,50,25,.18); box-shadow: 0 10px 26px rgba(70,50,25,.09); }
+  .ba figcaption { margin-top: .55rem; font-size: .95rem; }
   .proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin: 1rem 0; padding: 0; list-style: none; }
   .proof li { background: var(--panel); border-left: 5px solid var(--warm); border-radius: .5rem 1.4rem 1.2rem .5rem / .5rem 1.2rem 1.5rem .5rem; padding: .9rem 1.1rem 1rem;
     box-shadow: 0 1px 2px rgba(70,50,25,.08), 0 10px 26px rgba(70,50,25,.07); display: flex; flex-direction: column; gap: .35rem; }
@@ -226,7 +230,17 @@
   <p>Iets technisch dat niet op de lijst staat? Vraag het ons, dan laten we weten of we het oppakken. <a href="prices.html?lang=nl" hreflang="en">Bekijk alle prijzen</a></p>
 
   <h2 id="samples">Bekijk het werk voordat u beslist</h2>
-  <p>Geloof ons niet op ons woord. Elk voorbeeld hieronder is echt werk, met datum, gemaakt met openbare data of op onze eigen pagina's, en u kunt elke regel controleren. We zijn een nieuw bedrijf, dus we hebben nog geen werk voor klanten om te laten zien. De voorbeelden zijn in het Engels.</p>
+  <p>Geloof ons niet op ons woord. Elk voorbeeld hieronder is echt werk, met datum, gemaakt met openbare data of op onze eigen pagina's, en u kunt elke regel controleren. We zijn in 2026 begonnen en hebben nog geen klanten, dus de voorbeelden zijn ons eigen werk. De voorbeelden zijn in het Engels.</p>
+  <div class="ba">
+    <figure>
+      <img src="img/ba_en_before.webp" width="1140" height="1125" alt="De pagina van de demowinkel met 18 rode markeringen op de onderdelen die niet door de test komen." loading="lazy" decoding="async">
+      <figcaption><strong>Voor.</strong> Onze demowinkelpagina, met de zes meest voorkomende soorten fouten. Een automatische test vindt 18 fouten, rood gemarkeerd.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/ba_en_after.webp" width="1140" height="1125" alt="Dezelfde demopagina na het herstel, zonder markeringen." loading="lazy" decoding="async">
+      <figcaption><strong>Na.</strong> Dezelfde pagina nadat we die hadden hersteld. Dezelfde test vindt er geen. Zo'n test vindt maar enkele soorten fouten.</figcaption>
+    </figure>
+  </div>
   <ul class="proof">
     <li>
       <h3>Een wekelijkse selectie van aanbestedingen</h3>

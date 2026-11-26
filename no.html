@@ -6,7 +6,7 @@
 <script>
 (function () {
   var m = /[?&]light=(dawn|day|dusk|night)\b/.exec(location.search), h = new Date().getHours();
-  document.documentElement.setAttribute('data-light', m ? m[1] : h < 5 || h >= 22 ? 'night' : h < 9 ? 'dawn' : h < 17 ? 'day' : 'dusk');
+  document.documentElement.setAttribute('data-light', m ? m[1] : 'day');
 })();
 </script>
 <title>Simplified Systems: vi tar IT-en, du driver bedriften</title>
@@ -113,6 +113,10 @@
   .panel, .price { border-radius: .9rem 1.3rem 1.1rem 1.4rem / 1.2rem .9rem 1.4rem 1.1rem; }
   h2 { padding-bottom: .35rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='6' viewBox='0 0 64 6'%3E%3Cpath d='M1 4 q7.75 -5 15.5 0 t15.5 0 t15.5 0 t15.5 0' fill='none' stroke='%23c98a1b' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") left bottom / 64px 6px no-repeat; }
   .panel h2 { background: none; padding-bottom: 0; }
+  .ba { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin: 1.2rem 0 1.4rem; }
+  .ba figure { margin: 0; }
+  .ba img { display: block; width: 100%; height: auto; border-radius: 1rem 1.3rem 1.1rem 1.4rem; border: 1px solid rgba(70,50,25,.18); box-shadow: 0 10px 26px rgba(70,50,25,.09); }
+  .ba figcaption { margin-top: .55rem; font-size: .95rem; }
   .proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin: 1rem 0; padding: 0; list-style: none; }
   .proof li { background: var(--panel); border-left: 5px solid var(--warm); border-radius: .5rem 1.4rem 1.2rem .5rem / .5rem 1.2rem 1.5rem .5rem; padding: .9rem 1.1rem 1rem;
     box-shadow: 0 1px 2px rgba(70,50,25,.08), 0 10px 26px rgba(70,50,25,.07); display: flex; flex-direction: column; gap: .35rem; }
@@ -225,7 +229,17 @@
   <p>Noe teknisk som ikke står på listen? Spør oss, så sier vi fra om vi tar det på oss. <a href="priser.html">Se alle priser</a></p>
 
   <h2 id="samples">Se arbeidet før du bestemmer deg</h2>
-  <p>Ikke ta vårt ord for det. Hvert eksempel nedenfor er ekte arbeid, datert, på offentlige data eller på våre egne sider, og du kan kontrollere hver linje. Vi er en ny bedrift, så vi har ikke kundearbeid å vise frem ennå.</p>
+  <p>Ikke ta vårt ord for det. Hvert eksempel nedenfor er ekte arbeid, datert, på offentlige data eller på våre egne sider, og du kan kontrollere hver linje. Vi startet i 2026 og har ingen kunder ennå, så eksemplene er vårt eget arbeid.</p>
+  <div class="ba">
+    <figure>
+      <img src="img/ba_nb_before.webp" width="1140" height="1125" alt="Demobutikken med 18 røde merker på delene som ikke består testen." loading="lazy" decoding="async">
+      <figcaption><strong>Før.</strong> Demobutikken vår, med de seks vanligste typene feil. En automatisk test finner 18 feil, markert med rødt.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/ba_nb_after.webp" width="1140" height="1125" alt="Den samme demobutikken etter rettingen, uten merker." loading="lazy" decoding="async">
+      <figcaption><strong>Etter.</strong> Den samme siden etter at vi rettet den. Den samme testen finner ingen. En slik test finner bare noen typer feil.</figcaption>
+    </figure>
+  </div>
   <ul class="proof">
     <li>
       <h3>Et ukentlig anbudsutvalg</h3>
